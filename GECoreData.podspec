@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "GECoreData"
-  s.version = "0.0.1"
+  s.version = "0.0.2"
   s.summary = "Core Data related extensions"
 
   s.description  = <<~END
@@ -22,12 +22,14 @@ Pod::Spec.new do |s|
   s.swift_version = "4.2"
 
   s.source_files  = "GECoreData/*.swift"
+  s.resource_bundle = { 'GECoreData-Sources' => 'GECoreData' }
 
   s.dependency "GEFoundation", "~> 0.1"
   s.dependency "GETracing", "~> 0.1"
 
   s.test_spec 'Tests' do |test_spec|
     test_spec.source_files = 'GECoreDataTests/*.swift'
+    test_spec.dependency 'GELeaks'
   end  
 
 end
