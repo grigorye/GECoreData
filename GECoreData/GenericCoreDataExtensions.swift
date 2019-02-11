@@ -180,6 +180,8 @@ public func stringFromFetchedResultsChangeType(_ type: NSFetchedResultsChangeTyp
 		return "Update"
 	case .move:
 		return "Move"
+	default:
+		fatalError()
 	}
 }
 #endif
